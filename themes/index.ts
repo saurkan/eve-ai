@@ -11,7 +11,7 @@ const baseGlassmorphismOptions: ThemeOptions = {
     h6: { fontWeight: 500, fontSize: '1rem' },
     button: {
         fontWeight: 600,
-        fontSize: '0.8rem',
+        fontSize: '0.6rem',
     }
   },
 };
@@ -55,6 +55,7 @@ const createGlassmorphismTheme = (): ThemeOptions => {
                 styleOverrides: {
                     html: { height: '100%' },
                     body: {
+                        fontSize: '0.75rem', // Global body font size
                         background: '#0b0b0f',
                         backgroundImage: 'radial-gradient(1200px 600px at 20% -10%, rgba(149,117,205,0.12) 0%, rgba(149,117,205,0) 60%), radial-gradient(1200px 600px at 110% 110%, rgba(77,182,172,0.10) 0%, rgba(77,182,172,0) 60%)',
                         color: darkPalette.text.primary,

@@ -126,41 +126,6 @@ const PatientDashboard: React.FC<PatientDashboardProps> = ({ onNavigate }) => {
             </Grid>
             </Box>
           </PanelBarItem>
-          <PanelBarItem 
-            title="Appointments" 
-            style={{
-              backgroundColor: theme.palette.background.paper,
-              color: theme.palette.text.primary,
-            }}
-          >
-            <Box sx={{ p: 2 }}>
-              <Scheduler
-                data={[]}
-                style={{ height: '400px', backgroundColor: theme.palette.background.paper, color: theme.palette.text.primary }}
-              />
-            </Box>
-          </PanelBarItem>
-          <PanelBarItem 
-            title="Health Analytics" 
-            style={{
-              backgroundColor: theme.palette.background.paper,
-              color: theme.palette.text.primary,
-            }}
-          >
-            <Box sx={{ p: 2 }}>
-              <Chart style={{ height: '300px', backgroundColor: theme.palette.background.paper, color: theme.palette.text.primary }}>
-                <ChartSeries>
-                  <ChartSeriesItem type="line" data={[65, 70, 68, 72, 75, 78, 80]} />
-                </ChartSeries>
-                <ChartCategoryAxis>
-                  <ChartCategoryAxisItem categories={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']} />
-                </ChartCategoryAxis>
-                <ChartValueAxis>
-                  <ChartValueAxisItem min={60} max={85} />
-                </ChartValueAxis>
-              </Chart>
-            </Box>
-          </PanelBarItem>
         </PanelBar>
         
         <Notification 

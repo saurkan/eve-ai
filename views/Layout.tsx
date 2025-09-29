@@ -102,22 +102,6 @@ const Layout: React.FC<LayoutProps> = ({ mode, onUploadClick, onSwitchMode, onNa
           <Typography variant="h5" noWrap component="div" sx={{ flexGrow: 1, fontWeight: 'bold' }}>
             {viewTitle}
           </Typography>
-          <Menu 
-            style={{
-              backgroundColor: theme.palette.background.paper,
-              border: `1px solid ${theme.palette.divider}`,
-              zIndex: theme.zIndex.modal + 1, // Ensure it's above other elements
-            }}
-          >
-            <MenuItem text="File" style={{ color: theme.palette.text.primary }}>
-              <MenuItem text="Upload Scan" onClick={onUploadClick} style={{ color: theme.palette.text.primary }} />
-              <MenuItem text="Export Report" style={{ color: theme.palette.text.primary }} />
-            </MenuItem>
-            <MenuItem text="View" style={{ color: theme.palette.text.primary }}>
-              <MenuItem text="Dashboard" onClick={() => onNavigate('dashboard')} style={{ color: theme.palette.text.primary }} />
-              <MenuItem text="Settings" style={{ color: theme.palette.text.primary }} />
-            </MenuItem>
-          </Menu>
           { mode === 'doctor' && viewTitle === 'Triage Dashboard' &&
             <Button themeColor="secondary" onClick={onUploadClick}>
               <UploadIcon style={{ marginRight: '8px' }} />

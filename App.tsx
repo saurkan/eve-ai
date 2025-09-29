@@ -65,7 +65,7 @@ const App: React.FC = () => {
                     justifyContent: 'center',
                     alignItems: 'center',
                     minHeight: '100vh', // Ensure it takes full viewport height to center content
-                    backgroundColor: activeTheme.palette.background.default, // Use theme background
+                    backgroundColor: activeTheme.palette.background.paper, // Use theme background
                 }}
             >
                 <Box

@@ -43,10 +43,13 @@ const KnowledgeBox: React.FC<KnowledgeBoxProps> = ({ domain, sx }) => {
           zone="aws-us-east-2-1"
           features="answers,rephrase,suggestions,autocompleteFromNERs,citations,hideResults"
           rag_strategies="neighbouring_paragraphs|2|2"
+          mode="dark"
           feedback="none"
         ></nuclia-search-bar>
         {/* Nuclia Search Results */}
-        <nuclia-search-results></nuclia-search-results>
+        <nuclia-search-results 
+          mode="dark"
+        ></nuclia-search-results>
       </Box>
     </Paper>
   );
