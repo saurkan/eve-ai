@@ -8,6 +8,7 @@ import LandingPage from './views/LandingPage';
 import UploadModal from './components/UploadModal';
 import { AppMode, HealthDomain, ScanType } from './types';
 import { useCaseProcessor } from './hooks/useCaseProcessor';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const App: React.FC = () => {
     const [mode, setMode] = useState<AppMode>('landing');
@@ -81,7 +82,9 @@ const App: React.FC = () => {
                         flexDirection: 'column',
                     }}
                 >
-                    {renderContent()}
+                    <ErrorBoundary>
+                        {renderContent()}
+                    </ErrorBoundary>
                 </Box>
             </Box>
             <UploadModal 
