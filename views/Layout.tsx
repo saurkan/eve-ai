@@ -88,7 +88,7 @@ const Layout: React.FC<LayoutProps> = ({ mode, onUploadClick, onSwitchMode, onNa
   );
 
   return (
-    <Box sx={{ display: 'flex', minHeight: '100vh' }}>
+    <Box sx={{ display: 'flex', minHeight: '100%' }}>
       <AppBar
         position="fixed"
         elevation={0}
@@ -143,7 +143,7 @@ const Layout: React.FC<LayoutProps> = ({ mode, onUploadClick, onSwitchMode, onNa
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` }, height: '100vh', overflow: 'auto', color: 'text.primary', backgroundColor: theme.palette.background.default }}
+        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` }, height: '100%', overflow: 'auto', color: 'text.primary', backgroundColor: theme.palette.background.paper }}
       >
         <Toolbar />
         {children}

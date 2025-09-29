@@ -59,7 +59,31 @@ const App: React.FC = () => {
     return (
         <ThemeProvider theme={activeTheme}>
             <CssBaseline />
-            {renderContent()}
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    minHeight: '100vh', // Ensure it takes full viewport height to center content
+                    backgroundColor: activeTheme.palette.background.default, // Use theme background
+                }}
+            >
+                <Box
+                    sx={{
+                        width: '100%',
+                        maxWidth: '1400px', // Max width for the application
+                        height: '95vh', // Max height for the application
+                        maxHeight: '900px', // Max height for the application
+                        borderRadius: 4,
+                        overflow: 'hidden', // Hide overflow if content exceeds bounds
+                        boxShadow: 24, // Add some shadow for visual separation
+                        display: 'flex',
+                        flexDirection: 'column',
+                    }}
+                >
+                    {renderContent()}
+                </Box>
+            </Box>
             <UploadModal 
                 open={isUploadModalOpen}
                 onClose={() => setUploadModalOpen(false)}

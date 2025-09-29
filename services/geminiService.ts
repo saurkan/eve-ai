@@ -572,7 +572,7 @@ export const getResearchAnswer = async (query: string): Promise<string> => {
 
 // --- RAG Knowledge Base ---
 export const getKnowledgeAnswer = async (query: string, domain: string): Promise<string> => {
-    const nucliaApiUrl = '/api/nuclia/at/antrks-ai/aws-us-east-2-1/antrks/chat';
+    const nucliaApiUrl = '/api/nuclia-chat';
 
     try {
         // Use a non-streaming request to avoid potential CORS issues with streaming endpoints.

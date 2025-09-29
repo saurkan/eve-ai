@@ -9,10 +9,10 @@ export default defineConfig(({ mode }) => {
         port: 3000,
         host: '0.0.0.0',
         proxy: {
-          '/api/nuclia': {
-            target: 'https://rag.progress.cloud',
+          '/api/nuclia-chat': { // Changed endpoint to be more specific
+            target: 'https://rag.progress.cloud/at/antrks-ai/aws-us-east-2-1/antrks/chat', // Full target URL
             changeOrigin: true,
-            rewrite: (path) => path.replace(/^\/api\/nuclia/, ''),
+            // No rewrite rule needed now
           },
         },
       },
