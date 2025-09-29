@@ -40,9 +40,24 @@ const PatientDashboard: React.FC<PatientDashboardProps> = ({ onNavigate }) => {
           />
         </Box>
 
-        <PanelBar style={{ marginBottom: '20px' }}>
-          <PanelBarItem title="Health Modules" expanded>
+        <PanelBar 
+          style={{
+            marginBottom: '20px',
+            backgroundColor: theme.palette.background.paper,
+            border: `1px solid ${theme.palette.divider}`,
+            color: theme.palette.text.primary,
+          }}
+        >
+          <PanelBarItem 
+            title="Health Modules" 
+            expanded 
+            style={{
+              backgroundColor: theme.palette.background.paper,
+              color: theme.palette.text.primary,
+            }}
+          >
             <Box sx={{ p: 2 }}>
+            <Grid container spacing={2}>
             <Grid item xs={12} sm={6} md={4}>
                 <BentoCard
                     title="Menstrual & Reproductive Health"
@@ -106,9 +121,16 @@ const PatientDashboard: React.FC<PatientDashboardProps> = ({ onNavigate }) => {
                     variant="large"
                 />
             </Grid>
+            </Grid>
             </Box>
           </PanelBarItem>
-          <PanelBarItem title="Appointments">
+          <PanelBarItem 
+            title="Appointments" 
+            style={{
+              backgroundColor: theme.palette.background.paper,
+              color: theme.palette.text.primary,
+            }}
+          >
             <Box sx={{ p: 2 }}>
               <Scheduler
                 data={[]}
@@ -116,7 +138,13 @@ const PatientDashboard: React.FC<PatientDashboardProps> = ({ onNavigate }) => {
               />
             </Box>
           </PanelBarItem>
-          <PanelBarItem title="Health Analytics">
+          <PanelBarItem 
+            title="Health Analytics" 
+            style={{
+              backgroundColor: theme.palette.background.paper,
+              color: theme.palette.text.primary,
+            }}
+          >
             <Box sx={{ p: 2 }}>
               <Chart style={{ height: '300px' }}>
                 <ChartSeries>
