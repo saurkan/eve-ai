@@ -143,7 +143,7 @@ const Layout: React.FC<LayoutProps> = ({ mode, onUploadClick, onSwitchMode, onNa
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` }, height: '100vh', overflow: 'auto', color: 'text.primary' }}
+        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` }, height: '100vh', overflow: 'auto', color: 'text.primary', backgroundColor: theme.palette.background.default }}
       >
         <Toolbar />
         {children}

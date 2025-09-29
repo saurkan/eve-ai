@@ -102,8 +102,23 @@ const BreastCancerAnalysisView: React.FC = () => {
           </Paper>
         </SplitterPane>
         <SplitterPane size="30%" min="300px">
-          <TabStrip selected={selectedTab} onSelect={(e) => setSelectedTab(e.selected)} style={{ height: '100%' }}>
-            <TabStripTab title="Controls">
+          <TabStrip 
+            selected={selectedTab} 
+            onSelect={(e) => setSelectedTab(e.selected)} 
+            style={{
+              height: '100%',
+              backgroundColor: theme.palette.background.paper,
+              border: `1px solid ${theme.palette.divider}`,
+              color: theme.palette.text.primary,
+            }}
+          >
+            <TabStripTab 
+              title="Controls" 
+              style={{
+                backgroundColor: theme.palette.background.paper,
+                color: theme.palette.text.primary,
+              }}
+            >
               <Box sx={{ p: 2, height: '100%' }}>
                 <BreastControls
                   files={files}
@@ -125,7 +140,13 @@ const BreastCancerAnalysisView: React.FC = () => {
                 )}
               </Box>
             </TabStripTab>
-            <TabStripTab title="Knowledge Base">
+            <TabStripTab 
+              title="Knowledge Base" 
+              style={{
+                backgroundColor: theme.palette.background.paper,
+                color: theme.palette.text.primary,
+              }}
+            >
               <Box sx={{ height: '100%' }}>
                 <KnowledgeBox 
                   domain="Breast Cancer" 

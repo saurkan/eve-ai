@@ -591,7 +591,14 @@ export const getKnowledgeAnswer = async (query: string, domain: string): Promise
             throw new Error(`Nuclia API request failed with status ${response.status}: ${errorText}`);
         }
 
-        const data = await response.json();
+        let data;
+        try {
+            data = await response.json();
+        } catch (jsonError) {
+            const errorText = await response.text(); // Re-read text if JSON parsing fails
+            console.error('Error parsing Nuclia API response JSON:', jsonError, 'Response text:', errorText);
+            throw new Error(`Failed to parse knowledge base response. Raw response: ${errorText}`);
+        }
         
         // Extract the 'answer' field from the JSON response.
         return data.answer?.trim() || 'No answer found in the response.';
