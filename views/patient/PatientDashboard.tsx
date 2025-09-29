@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid } from '@mui/material';
+import { Box, Typography, Grid, useTheme } from '@mui/material';
 import { PanelBar, PanelBarItem } from '@progress/kendo-react-layout';
 import { Scheduler } from '@progress/kendo-react-scheduler';
 import { DatePicker } from '@progress/kendo-react-dateinputs';
@@ -24,6 +24,7 @@ interface PatientDashboardProps {
 
 const PatientDashboard: React.FC<PatientDashboardProps> = ({ onNavigate }) => {
   const [selectedDate, setSelectedDate] = React.useState(new Date());
+  const theme = useTheme();
   
   return (
     <Box sx={{ overflowX: 'hidden' }}>
@@ -37,6 +38,7 @@ const PatientDashboard: React.FC<PatientDashboardProps> = ({ onNavigate }) => {
           <DatePicker 
             value={selectedDate} 
             onChange={(e) => setSelectedDate(e.value || new Date())}
+            style={{ backgroundColor: theme.palette.background.paper, color: theme.palette.text.primary }}
           />
         </Box>
 
@@ -134,7 +136,7 @@ const PatientDashboard: React.FC<PatientDashboardProps> = ({ onNavigate }) => {
             <Box sx={{ p: 2 }}>
               <Scheduler
                 data={[]}
-                style={{ height: '400px' }}
+                style={{ height: '400px', backgroundColor: theme.palette.background.paper, color: theme.palette.text.primary }}
               />
             </Box>
           </PanelBarItem>
@@ -146,7 +148,7 @@ const PatientDashboard: React.FC<PatientDashboardProps> = ({ onNavigate }) => {
             }}
           >
             <Box sx={{ p: 2 }}>
-              <Chart style={{ height: '300px' }}>
+              <Chart style={{ height: '300px', backgroundColor: theme.palette.background.paper, color: theme.palette.text.primary }}>
                 <ChartSeries>
                   <ChartSeriesItem type="line" data={[65, 70, 68, 72, 75, 78, 80]} />
                 </ChartSeries>
@@ -161,7 +163,9 @@ const PatientDashboard: React.FC<PatientDashboardProps> = ({ onNavigate }) => {
           </PanelBarItem>
         </PanelBar>
         
-        <Notification />
+        <Notification 
+          style={{ backgroundColor: theme.palette.background.paper, color: theme.palette.text.primary }}
+        />
     </Box>
   );
 };

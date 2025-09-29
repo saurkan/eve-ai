@@ -1,6 +1,6 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
-import { Box, Paper, Typography } from '@mui/material';
+import { Box, Paper, Typography, useTheme } from '@mui/material';
 import { Splitter, SplitterPane } from '@progress/kendo-react-layout';
 import { ProgressBar } from '@progress/kendo-react-progressbars';
 import { TabStrip, TabStripTab } from '@progress/kendo-react-layout';
@@ -28,6 +28,7 @@ const BreastCancerAnalysisView: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   const [selectedTab, setSelectedTab] = useState(1); // 1 for Knowledge Base tab
+  const theme = useTheme();
 
   // Create object URLs for display, and clean them up
   const displayImages = useMemo(() => {
@@ -88,8 +89,8 @@ const BreastCancerAnalysisView: React.FC = () => {
 
   return (
     <Box sx={{ height: 'calc(100vh - 112px)' }}>
-      <Splitter style={{ height: '100%' }}>
-        <SplitterPane size="70%" min="400px">
+      <Splitter style={{ height: '100%', backgroundColor: theme.palette.background.paper }}>
+        <SplitterPane size="70%" min="400px" style={{ backgroundColor: theme.palette.background.paper }}>
           <Paper sx={{ p: 2, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             {Object.keys(displayImages).length > 0 ? (
               <BreastCanvas
@@ -101,7 +102,7 @@ const BreastCancerAnalysisView: React.FC = () => {
             )}
           </Paper>
         </SplitterPane>
-        <SplitterPane size="30%" min="300px">
+        <SplitterPane size="30%" min="300px" style={{ backgroundColor: theme.palette.background.paper }}>
           <TabStrip 
             selected={selectedTab} 
             onSelect={(e) => setSelectedTab(e.selected)} 
