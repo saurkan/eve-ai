@@ -1,7 +1,3 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
-
 # EVE AI: Advanced Clinical Support & Personalized Patient Care
 
 EVE AI is a cutting-edge application designed to revolutionize women's health by providing intelligent, AI-driven tools for both medical professionals and patients. It streamlines workflows for clinicians through automated analysis and report generation, while empowering patients with accessible health information and personalized tracking tools.
