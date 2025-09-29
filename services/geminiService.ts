@@ -571,43 +571,7 @@ export const getResearchAnswer = async (query: string): Promise<string> => {
 };
 
 // --- RAG Knowledge Base ---
-export const getKnowledgeAnswer = async (query: string, domain: string): Promise<string> => {
-    const nucliaApiUrl = '/api/nuclia-chat';
-
-    try {
-        // Use a non-streaming request to avoid potential CORS issues with streaming endpoints.
-        const response = await fetch(nucliaApiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                question: query,
-            }),
-        });
-
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(`Nuclia API request failed with status ${response.status}: ${errorText}`);
-        }
-
-        let data;
-        try {
-            data = await response.json();
-        } catch (jsonError) {
-            const errorText = await response.text(); // Re-read text if JSON parsing fails
-            console.error('Error parsing Nuclia API response JSON:', jsonError, 'Response text:', errorText);
-            throw new Error(`Failed to parse knowledge base response. Raw response: ${errorText}`);
-        }
-        
-        // Extract the 'answer' field from the JSON response.
-        return data.answer?.trim() || 'No answer found in the response.';
-
-    } catch (error) {
-        console.error('Error fetching from Nuclia RAG API:', error);
-        throw new Error('Failed to get answer from the knowledge base.');
-    }
-};
+// RAG Knowledge Base functionality will be handled by the Nuclia widget directly.
 
 
 // --- MOCK DATA GENERATION ---
